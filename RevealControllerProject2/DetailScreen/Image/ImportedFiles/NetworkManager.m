@@ -29,12 +29,11 @@
 }
 -(id)init {
     if (self = [super init]) {
-//        _httpRequestOperationManager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:nil];
-//
+
     }
     return self;
 }
-// Phim dang chieu
+// Test trang Zing/chu de
 -(void)GetFilmFromLink:(NSString *)url OnComplete:(void (^)(NSArray *))completedMethod fail:(void (^)())failMethod{
 
     NSError * error;
@@ -45,9 +44,9 @@
     }
         NSMutableArray * allItems = [NSMutableArray new];
     
-        TFHpple * tutorialPaser = [TFHpple hppleWithHTMLData:data];
+        TFHpple *tutorialPaser = [TFHpple hppleWithHTMLData:data];
         
-        NSString * tutorialQueryString = @"//div[@class='category-products']/ul/li";
+        NSString *tutorialQueryString = @"//div[@class='category-products']/ul/li";
         NSArray *nodes = [tutorialPaser searchWithXPathQuery:tutorialQueryString];
         for (TFHppleElement * element in nodes) { // bắt đầu duyệt trong class "category ...
             
@@ -67,7 +66,7 @@
             TFHppleElement * element4 = [element firstChildWithClassName:@"product-info"]; //tạo node chứa thẻ prdoduct info
             TFHppleElement *element20 = [element4 firstChildWithClassName:@"product-name"];
             TFHppleElement *element21 = [element20 firstChildWithTagName:@"a"];
-           // TFHppleElement *element22 = [element21 firstChildWithTagName:@"title"];
+           
              NSString *name = [element21 objectForKey:@"title"];
             TFHppleElement *element5 = [element4 firstChildWithClassName:@"movie-actress"]; // lấy thẻ movie
             TFHppleElement *element6 = [element5 firstChildWithClassName:@"std"]; // lấy thẻ có class std
@@ -104,10 +103,65 @@
         }
         completedMethod(allItems);
 }
-// detail
 
 
-  
+-(void)GetMusicFromLink:(NSString *)urlmusic OnComplete:(void (^)(NSArray *))completedMethod fail:(void (^)())failMethod
+{
+    NSError * error;
+    NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlmusic]
+                                         options:NSDataReadingUncached
+                                           error:&error];
+    if (error) { failMethod();}
+    NSMutableArray * allItems = [NSMutableArray new];
+    
+    	TFHpple *tutorialPaser = [TFHpple hppleWithHTMLData:data];
+    
+    NSString *tutorialQueryString = @"//div[@class='zcontent']/div/div/div/div";
+    NSArray *nodes = [tutorialPaser searchWithXPathQuery:tutorialQueryString];
+    for (TFHppleElement * element in nodes) { // bắt đầu duyệt các phần tử trong class "zcontent"
+       
+        TFHppleElement * element1 = [element firstChildWithTagName:@"a"]; //Element 1 là thẻ a đầu tiên
+        
+        
+       NSString *linkDetail = [element1 objectForKey:@"href"]; // Done link chi tiết
+        
+        TFHppleElement *element2 = [element1 firstChildWithTagName:@"img"];
+        NSString *linkImage = [element2 objectForKey:@"src"];
+     
+        
+       // Xong việc với thẻ tag "a" chứa 2 link trên, ta chuyển sang thẻ khác chứa các thông tin còn lại,
+        
+        TFHppleElement *element3 = [element firstChildWithClassName:@"description"];
+        TFHppleElement *element4 = [element3 firstChildWithClassName:@"title-item ellipsis"];
+        
+        TFHppleElement *element5 = [element4 firstChildWithTagName:@"a"];
+        NSString *tenbaihat = element5.content;
+         // --> done !!
+        
+        TFHppleElement *element6 = [element3 firstChildWithClassName:@"inblock ellipsis"];
+        TFHppleElement *element7 = [element6 firstChildWithClassName:@"title-sd-item"];
+        TFHppleElement *element8 = [element7 firstChildWithTagName:@"a"];
+        NSString *tencasi = element8.content;
+      
+      
+        PhimObj *song =[[PhimObj alloc] initWithName:tenbaihat
+                                            catelogy:tencasi
+                                            duration:nil
+                                                date:nil
+                                          linkDetail:linkDetail
+                                            imageUrl:linkImage];
+        [allItems addObject:song];
+        
+        
+
+    }
+    completedMethod(allItems);
+
+
+
+
+}
+
 
 
 

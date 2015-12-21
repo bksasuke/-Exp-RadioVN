@@ -10,6 +10,7 @@
 
 @interface DetailScreen : UITableViewController <UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) NSString *stringTitleDetailScreen;
+@property (nonatomic, strong) NSString *stringLinkDetail;
 
 
 @end

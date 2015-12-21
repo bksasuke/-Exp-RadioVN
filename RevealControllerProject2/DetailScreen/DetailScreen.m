@@ -33,11 +33,16 @@
     DataItems *girls = [[DataItems alloc] initWithTitle:@"Girls" andData:@[@"Miranda Kerr", @"Kate Upton", @"Adriana Lima", @"Rosie Huntington-Whiteley"]];
     
     arrayDataItems2 = [[NSMutableArray alloc] initWithObjects:fruits,things,girls, nil];
+    
+    
+    NSLog(@"%@", self.stringLinkDetail);
+
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.tableView registerNib:[UINib nibWithNibName:@"CustomCell" bundle:nil] forCellReuseIdentifier:@"Cell"];
+    
     
 }
 
@@ -67,7 +72,7 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     DataItems *items = arrayDataItems2[section];
-    NSLog (@"%@",items.title);
+//    NSLog (@"%@",items.title);
     return items.title;
     
 }

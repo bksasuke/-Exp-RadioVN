@@ -11,5 +11,5 @@
 @interface NetworkManager : NSObject
 +(instancetype)shareManager;
 -(void) GetFilmFromLink:(NSString*) url OnComplete:(void(^)(NSArray *items))completedMethod fail:(void(^)())failMethod;
-
+-(void) GetMusicFromLink: (NSString*) urlmusic OnComplete:(void(^)(NSArray *items))completedMethod fail:(void(^)())failMethod;
 @end

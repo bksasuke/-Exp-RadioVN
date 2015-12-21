@@ -140,6 +140,7 @@
     // selecting row
     NSInteger row = indexPath.row;
     
+    
     // if we are trying to push the same row or perform an operation that does not imply frontViewController replacement
     // we'll just set position and return
     
@@ -157,28 +158,33 @@
     {
         FrontViewController *frontViewController = [[FrontViewController alloc] init];
         newFrontController = [[UINavigationController alloc] initWithRootViewController:frontViewController];
+        frontViewController.linkFrontView = @"http://mp3.zing.vn/the-loai-album.html";
     }
     
     else if (row == 1)
     {
         FrontViewController *frontViewController = [[FrontViewController alloc] init];
         newFrontController = [[UINavigationController alloc] initWithRootViewController:frontViewController];
+        frontViewController.linkFrontView = @"http://mp3.zing.vn/the-loai-video.html";
     }
     else if (row == 2)
     {
         FrontViewController *frontViewController = [[FrontViewController alloc] init];
         newFrontController = [[UINavigationController alloc] initWithRootViewController:frontViewController];
+        frontViewController.linkFrontView = @"http://mp3.zing.vn/the-loai-album/Han-Quoc/IWZ9Z08W.html";
     }
     else if (row == 3)
     {
         FrontViewController *frontViewController = [[FrontViewController alloc] init];
         newFrontController = [[UINavigationController alloc] initWithRootViewController:frontViewController];
+        frontViewController.linkFrontView =@"http://mp3.zing.vn/the-loai-album/Au-My/IWZ9Z08O.html";
     }
 
     else if ( row == 4 )
     {
         FrontViewController *frontViewController = [[FrontViewController alloc] init];
         newFrontController = [[UINavigationController alloc] initWithRootViewController:frontViewController];
+        frontViewController.linkFrontView =@"http://mp3.zing.vn/the-loai-album/Han-Quoc/IWZ9Z08W.html";
     }
     
     [revealController pushFrontViewController:newFrontController animated:YES];

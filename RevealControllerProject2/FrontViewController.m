@@ -26,6 +26,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    if (self.linkFrontView == nil) {
+        
+   self.linkFrontView = @"http://mp3.zing.vn/the-loai-album.html";
+    }
+    
+    else;
+    NSLog(@"%@",self.linkFrontView);
+    
     [self loadHTML];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -39,15 +48,15 @@
                                                                          style:UIBarButtonItemStyleBordered
                                                                         target:revealController
                                                                         action:@selector(revealToggle:)];
-    
     self.navigationItem.leftBarButtonItem = revealButtonItem;
     
+   
     
 
 }
 
 
-- (void) viewDidLayoutSubviews
+- (void) viewDidLayoutSubviews // Layout màn hình theo tỉ lệ 1:2
 {
     [super viewWillLayoutSubviews];
     [self loadHTML];
@@ -65,7 +74,7 @@
 }
 
 -(void) loadHTML{
-    [[NetworkManager shareManager] GetFilmFromLink:@"https://www.cgv.vn/vn/movies/now-showing.html"
+    [[NetworkManager shareManager] GetMusicFromLink:self.linkFrontView
                                         OnComplete:^(NSArray *items) {
         self.arr_data = [[NSMutableArray alloc] initWithArray:items];
         
@@ -76,9 +85,6 @@
     }];
     
 }
-
-
-
 
 
 #pragma mark - Tableview configure
@@ -108,7 +114,7 @@
     NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:obj.linkAnh]];
     cell.imageView.image = [UIImage imageWithData:data];
     cell.detailTextLabel.text = obj.theLoai;
-    cell.textLabel.font = [UIFont systemFontOfSize:20.0];
+    cell.textLabel.font = [UIFont systemFontOfSize:16.0];
     cell.detailTextLabel.font = [UIFont systemFontOfSize:9];
     return cell ;}
 
@@ -118,7 +124,30 @@
         self.detailScreen = [[DetailScreen alloc] init];
     }
     self.detailScreen.stringTitleDetailScreen = @"Ice Cream";
+    
+    PhimObj *phimObj = [PhimObj new];
+    phimObj = self.arr_data[indexPath.row];
+    
+    self.detailScreen.stringLinkDetail = phimObj.linkChitiet;
+    
     [self.navigationController pushViewController:self.detailScreen animated:YES];
 }
 
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
