@@ -115,7 +115,7 @@
 		4EDE1D10168F06E3005656D1 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5E1EFE1314A0BA4F008062C1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RearViewController.xib; sourceTree = "<group>"; };
 		5E5A2CFF14E0CD8D0042AE1E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		5E605BA514A081F900853025 /* RevealControllerProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RevealControllerProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E605BA514A081F900853025 /* RadioVNBeta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RadioVNBeta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E605BA914A081F900853025 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5E605BAB14A081F900853025 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5E605BAD14A081F900853025 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -280,7 +280,7 @@
 		5E605BA614A081F900853025 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5E605BA514A081F900853025 /* RevealControllerProject.app */,
+				5E605BA514A081F900853025 /* RadioVNBeta.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -302,6 +302,7 @@
 			isa = PBXGroup;
 			children = (
 				93FF7BC51C2152CE00E3B36D /* DetailScreen */,
+				937776C21C22BE31009E3E04 /* NetWorkManager */,
 				930F21A41C216B920089A8CC /* DataItems.h */,
 				930F21A51C216B920089A8CC /* DataItems.m */,
 				5E5A2CF414E0CB860042AE1E /* RearViewController (Rear) */,
@@ -351,6 +352,7 @@
 				937776C41C22BE3F009E3E04 /* NetworkManager.m */,
 			);
 			name = NetWorkManager;
+			path = DetailScreen/Image/ImportedFiles;
 			sourceTree = "<group>";
 		};
 		93AC6FB31C22A0F300269ABF /* ChannelPhoto */ = {
@@ -378,7 +380,6 @@
 			isa = PBXGroup;
 			children = (
 				9333E59A1C23C0BE0098E50E /* Library */,
-				937776C21C22BE31009E3E04 /* NetWorkManager */,
 				9333E5A71C23C7020098E50E /* Chanel.h */,
 				9333E5A81C23C7020098E50E /* Chanel.m */,
 			);
@@ -541,9 +542,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5E605BA414A081F900853025 /* RevealControllerProject */ = {
+		5E605BA414A081F900853025 /* RadioVNBeta */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5E605BC614A081F900853025 /* Build configuration list for PBXNativeTarget "RevealControllerProject" */;
+			buildConfigurationList = 5E605BC614A081F900853025 /* Build configuration list for PBXNativeTarget "RadioVNBeta" */;
 			buildPhases = (
 				5E605BA114A081F900853025 /* Sources */,
 				5E605BA214A081F900853025 /* Frameworks */,
@@ -553,9 +554,9 @@
 			);
 			dependencies = (
 			);
-			name = RevealControllerProject;
+			name = RadioVNBeta;
 			productName = RevealControllerProject;
-			productReference = 5E605BA514A081F900853025 /* RevealControllerProject.app */;
+			productReference = 5E605BA514A081F900853025 /* RadioVNBeta.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -578,7 +579,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5E605BA414A081F900853025 /* RevealControllerProject */,
+				5E605BA414A081F900853025 /* RadioVNBeta */,
 			);
 		};
 /* End PBXProject section */
@@ -798,7 +799,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RevealControllerProject2/Project-Prefix.pch";
 				INFOPLIST_FILE = "RevealControllerProject2/RevealControllerProject-Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.zuui.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = RadioVNBeta;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -812,7 +813,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RevealControllerProject2/Project-Prefix.pch";
 				INFOPLIST_FILE = "RevealControllerProject2/RevealControllerProject-Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.zuui.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = RadioVNBeta;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -831,7 +832,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5E605BC614A081F900853025 /* Build configuration list for PBXNativeTarget "RevealControllerProject" */ = {
+		5E605BC614A081F900853025 /* Build configuration list for PBXNativeTarget "RadioVNBeta" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5E605BC714A081F900853025 /* Debug */,
